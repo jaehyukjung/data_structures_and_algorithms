@@ -2,10 +2,12 @@ import java.util.NoSuchElementException;
 
 public class SList <E>{
     protected Node head; //첫 노드를 가리킴
+    protected Node tail;
     protected Node p;
     private int size;
     public SList(){
         head = null;
+        tail = null;
         size =0;
     }
     public int search(E target){
@@ -16,6 +18,7 @@ public class SList <E>{
         }
         return -1;
     }
+
     public void getItem(){
         p =head;
         for(int i=0;i<size;i++){
