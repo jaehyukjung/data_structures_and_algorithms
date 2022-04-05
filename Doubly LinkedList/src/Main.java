@@ -9,11 +9,11 @@ public class Main {
         while(true){
             String s = br.readLine();
             if(s.equals("print")) break;
-            if(dlist.get(s)==-1){
+            if(dlist.get(s)==-1){ //해당 값이 없으면, 마지막에 삽입.
                 dlist.insertLast(s);
             }
             else {
-                int N = dlist.get(s);
+                int N = dlist.get(s); // 기존에 요소가 있으면 인덱스 번호 반환하고 삭제.
                 dlist.remove(N);
             }
         }
