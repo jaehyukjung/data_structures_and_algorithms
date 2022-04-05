@@ -91,12 +91,6 @@ public class DList<E> {
         // 추가하려는 노드
         Node<E> newNode = new Node<E>(value);
 
-        /**
-         * 이전 노드가 가리키는 노드를 끊은 뒤
-         * 새 노드로 변경해준다.
-         * 또한 새 노드가 가리키는 노드는 next_Node로
-         * 설정해준다.
-         */
         prevNode.next = null;
         nextNode.prev = null;
 
@@ -132,13 +126,7 @@ public class DList<E> {
         head = nextNode;
         size--;
 
-        /**
-         * 삭제된 요소가 리스트의 유일한 요소였을 경우
-         * 그 요소는 head 이자 tail이었으므로
-         * 삭제되면서 tail도 가리킬 요소가 없기 때문에
-         * size가 0일경우 tail도 null로 변환
-         */
-        if(size == 0) {
+        if(size == 0) { //size가 0이면 둘다 null값을 가리켜야 함
             tail = null;
         }
         return element;
