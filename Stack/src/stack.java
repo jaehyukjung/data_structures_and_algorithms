@@ -5,7 +5,7 @@ public class stack<E> {
     private int top; //배열 선언
     private int size;
 
-    public stack(){  // 기본선언은 개수와 배열의 크기가 모두 0으로 시작
+    public stack(){
         top =-1;
         size = 1;
         arr = (E[]) new Object[size];
@@ -45,7 +45,7 @@ public class stack<E> {
             }
             temp =null;
         }
-        else if(top+1 <=0.25*size) { //데이터 삭제시 배열의 언더플로우를 고려해 데이터 개수가 배열 크기의 25% 이하로 떨어지면 임시배열을 이용해 배열의 크기를 반으로 줄인다.
+        else if(top+1 <=0.25*size && top>0) {//데이터 삭제시 배열의 언더플로우를 고려해 데이터 개수가 배열 크기의 25% 이하로 떨어지면 임시배열을 이용해 배열의 크기를 반으로 줄인다.
             size /=2;
             E temp[] = (E[]) new Object[top+1];
             for(int i=0;i<top+1;i++){
@@ -57,6 +57,12 @@ public class stack<E> {
             }
             temp =null;
         }
+    }
+    public void showStack(){
+        for(int i=0;i<top+1;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
     }
 
 }
