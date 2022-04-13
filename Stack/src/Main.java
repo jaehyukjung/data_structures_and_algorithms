@@ -10,11 +10,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         Scanner sc = new Scanner(System.in);
-
-        stack st = new stack();
-        String str = br.readLine();
-
         //실습과제1번
+        stack st = new stack();
+        String str = br.readLine(); // A+B*(C+D-E)/(F+G) 를 입력.
+
         for(int i=0;i<str.length();i++){
             char ch = str.charAt(i);
             if(ch !='+' && ch!= '-' && ch!='*' && ch!='/' && ch !='(' && ch!= ')'){
@@ -101,7 +100,7 @@ public class Main {
             }
 
 
-            st.showStack();
+            st.showStack(); //하나 진행될때 마다 stack 보여주기.
         }
 
     }
