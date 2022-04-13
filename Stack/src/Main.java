@@ -3,58 +3,67 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.StringTokenizer;
+
 
 public class Main {
     public static void main(String[] argv) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         Scanner sc = new Scanner(System.in);
 
         stack st = new stack();
         String str = br.readLine();
+
+        //실습과제1번
         for(int i=0;i<str.length();i++){
             char ch = str.charAt(i);
             if(ch !='+' && ch!= '-' && ch!='*' && ch!='/' && ch !='(' && ch!= ')'){
-                System.out.print(ch);
+                sb.append(ch);
             }
             else if(ch =='(') {
                 st.push(ch);
-
+                st.showStack();
                 while(true){
                     ch = str.charAt(++i);
                     if(ch == '*' || ch =='/'){
                         while(true){
-                            if(st.peek().equals('+') || st.peek().equals('-') || st.peek().equals('*') || st.peek().equals('/')) System.out.print(st.pop());
+                            if(st.peek().equals('+') || st.peek().equals('-') || st.peek().equals('*') || st.peek().equals('/')) sb.append(st.pop());
                             else {
                                 st.push(ch);
+                                st.showStack();
                                 break;
                             }
                         }
                     }
                     else if(ch == '+' || ch =='-'){
                         while(true){
-                            if(st.peek().equals('+') || st.peek().equals('-')) System.out.print(st.pop());
+                            if(st.peek().equals('+') || st.peek().equals('-')) sb.append(st.pop());
                             else {
                                 st.push(ch);
+                                st.showStack();
                                 break;
                             }
                         }
                     }
                     else if(ch == ')') {
-                        while(!st.peek().equals('(')) System.out.print(st.pop());
+                        while(!st.peek().equals('(')) sb.append(st.pop());
                         st.pop();
+                        st.showStack();
                         break;
                     }
-                    else System.out.print(ch);
+                    else sb.append(ch);
                 }
             }
 
             else st.push(ch);
+            st.showStack();
         }
         int N = st.size();
         for(int i=0;i<N+1;i++){
-            System.out.print(st.pop());
+            sb.append(st.pop());
+            st.showStack();
         }
+        System.out.println(sb);
 
 
 
@@ -63,10 +72,14 @@ public class Main {
         String ch = "1";
         while(ch !="0"){
             ch = sc.next();
+            if(ch.equals("0")) { //반복문을 종료하기 위한 조건.
+                System.out.println(st.pop()); //마지막에 있는거 출력하고 종료
+                break;
+            }
             if(ch.equals("/")){
-                int num1 = Integer.valueOf(Objects.toString(st.pop())) ;
+                int num1 = Integer.valueOf(Objects.toString(st.pop())) ; //실제 계산을 위해 E 형식을 String으로 변환후 이를 다시 Integer로 변호나
                 int num2 = Integer.valueOf(Objects.toString(st.pop())) ;
-                st.push(num2/num1);
+                st.push(num2/num1); //먼저 들어간 num2가 앞에 나오도록 계산.
             }
             else if(ch.equals("*")){
                 int num1 = Integer.valueOf(Objects.toString(st.pop())) ;
@@ -86,10 +99,7 @@ public class Main {
             else {
                 st.push(ch);
             }
-            if(ch.equals("0")) {
-                System.out.println(st.pop());
-                break;
-            }
+
 
             st.showStack();
         }
