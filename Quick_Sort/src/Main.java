@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void sort(int[] a){
@@ -8,6 +9,7 @@ public class Main {
     }
     private static void sort(int[] a,int low, int high){
         int part2 = partition(a ,low, high); //partition으로 피봇을 기준으로 다 변경했다면 재귀 호출.
+        printdata(a);
         if(low<part2-1){
             sort(a,low,part2-1); //low부터 partition을 통해 return값 -1까지 다시 정렬 시작
         }
@@ -34,21 +36,30 @@ public class Main {
         a[low]=a[high];
         a[high]=temp;
     }
-
+    private static void printdata(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
 
 
     public static void main(String[] argv) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st =new StringTokenizer(br.readLine());
+        int arr[]= new int[10]; //샘플 자료.
+        for(int i=0;i<arr.length;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
 
-        int arr[]= {3,9,4,7,5,0,1,6,8,2}; //샘플 자료.
         System.out.println("정렬전");
         for(int i=0;i<arr.length;i++){ //정렬전.
             System.out.print(arr[i]+" ");
         }
         System.out.println();
-
+        System.out.println();
         sort(arr); //정렬
-
+        System.out.println();
         System.out.println("정렬후");
 
         for(int i=0;i<arr.length;i++){ //정렬 후
