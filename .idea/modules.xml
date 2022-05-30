@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/2_Way_Chaining/2_Way_Chaining.iml" filepath="$PROJECT_DIR$/2_Way_Chaining/2_Way_Chaining.iml" />
       <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
       <module fileurl="file://$PROJECT_DIR$/Doubly LinkedList/Doubly LinkedList.iml" filepath="$PROJECT_DIR$/Doubly LinkedList/Doubly LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hanoi/Hanoi.iml" filepath="$PROJECT_DIR$/Hanoi/Hanoi.iml" />
@@ -9,7 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/Practice/Practice.iml" filepath="$PROJECT_DIR$/Practice/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/Queue/Queue.iml" filepath="$PROJECT_DIR$/Queue/Queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Quick_Sort/Quick_Sort.iml" filepath="$PROJECT_DIR$/Quick_Sort/Quick_Sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search/Search.iml" filepath="$PROJECT_DIR$/Search/Search.iml" />
       <module fileurl="file://$PROJECT_DIR$/Stack/Stack.iml" filepath="$PROJECT_DIR$/Stack/Stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Insert_Sort/insert_sort.iml" filepath="$PROJECT_DIR$/Insert_Sort/insert_sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/자료구조및알고리즘1.iml" filepath="$PROJECT_DIR$/자료구조및알고리즘1.iml" />
     </modules>
   </component>
