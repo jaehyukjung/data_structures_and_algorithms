@@ -173,6 +173,7 @@ class ChainHash {
 
             if(ch.count(hash)==0){ //테이블이 비어있다면 추가하는 기능
                 ch.add(num,num);
+                ch.print_all(); // 전체 테이블 보여주기
             }
             else break; //비어있지 않다면 멈추고
         }
